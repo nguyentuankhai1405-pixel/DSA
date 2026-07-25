@@ -1,0 +1,64 @@
+# --- GIAI DOAN 1: BENH NHAN DEN VAO BUOI SANG ---
+
+# Cac ca cap cuu va lay nhiem cao den dau tien
+add do "Nguyen Van An"
+add do "Tran Thi Binh"
+add cam "Le Van Cuong"
+add do "Pham Thi Dung"
+add cam "Hoang Van Giang"
+
+# Them ho so benh an cho cac ca nghiem trong
+add_illness "Nguyen Van An" "Benh tim bam sinh"
+add_allergy "Nguyen Van An" "Penicillin"
+add_allergy "Tran Thi Binh" "Aspirin"
+add_illness "Le Van Cuong" "Hen suyen"
+
+# Cac ca co trieu chung nhe va kham dinh ky
+add vang "Ly Thi Hien"
+add vang "Doan Van Hung"
+add xanh "Vu Thi Lan"
+add vang "Ngo Van Minh"
+add xanh "Dang Thi Nga"
+
+# --- GIAI DOAN 2: GIO CAO DIEM BUOI TRUA ---
+
+# Mot loat benh nhan moi den voi muc do uu tien khac nhau
+add do "Bui Van Kien"
+add vang "Ho Thi Oanh"
+add cam "Trinh Van Phuong"
+add do "Dinh Thi Quynh"
+add vang "Vo Van Sang"
+add xanh "Mai Van Tai"
+add cam "Duong Thi Thao"
+
+# Them ho so benh an cho cac benh nhan moi
+add_illness "Bui Van Kien" "Tieu duong type 2"
+add_allergy "Dinh Thi Quynh" "Haisan"
+add_allergy "Duong Thi Thao" "Penicillin"
+
+# --- GIAI DOAN 3: CAC TRUONG HOP DAC BIET VA BUOI CHIEU ---
+
+# Benh nhan co ten dai va phuc tap
+add vang "Tran Le Bao Ngoc"
+add do "Hoang Nguyen Minh Khang"
+
+# Them ho so benh an
+add_illness "Tran Le Bao Ngoc" "Viem da co dia"
+add_allergy "Hoang Nguyen Minh Khang" "Thuoc khang sinh nhom sulfa"
+
+# Mot so ca kham dinh ky va trieu chung nhe
+add xanh "Phan Thi Uyen"
+add vang "Lai Van Vinh"
+add xanh "Mac Thi Xuan"
+add vang "Luu Van Y"
+
+# Them mot ca lay nhiem cao
+add cam "Nguyen Hoang Anh Tuan"
+
+# Them ho so cho ca moi
+add_allergy "Nguyen Hoang Anh Tuan" "Ibuprofen"
+
+# Cac benh nhan cuoi cung trong ngay
+add xanh "Dao Minh Long"
+add vang "Chu Thi Mai"
+add xanh "Huynh Van Nam"
