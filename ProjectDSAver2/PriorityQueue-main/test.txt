@@ -1,0 +1,65 @@
+
+#   - add <Mã_BN> <mức_ưu_tiên> <Họ_và_Tên>
+#   - add_illness <Mã_BN> <Tên_Bệnh_Mãn_Tính>
+#   - add_allergy <Mã_BN> <Thuốc_Dị_Ứng>
+#   - prescribe <Mã_BN> <Ngày> <Chẩn_Đoán> <Danh_Sách_Thuốc>
+
+
+# --- 1. TIẾP NHẬN BỆNH NHÂN BAN ĐẦU VÀO CÁC HÀNG ĐỢI ---
+add BN001 do Nguyen Van An
+add BN002 do Tran Thi Binh
+add BN003 cam Le Van Cuong
+add BN004 do Pham Thi Dung
+add BN005 cam Hoang Van Giang
+add BN006 vang Ly Thi Hien
+add BN007 vang Doan Van Hung
+add BN008 xanh Vu Thi Lan
+add BN009 vang Ngo Van Minh
+add BN010 xanh Dang Thi Nga
+
+# --- 2. THÊM TIỀN SỬ BỆNH LÝ (BỆNH MÃN TÍNH & DỊ ỨNG THUỐC) ---
+add_illness BN001 Benh tim bam sinh
+add_illness BN001 Hen suyen
+add_allergy BN001 Penicillin,Amoxicillin
+
+add_illness BN003 Tieu duong type 2
+add_allergy BN004 Aspirin,Ibuprofen
+add_allergy BN005 Paracetamol
+
+# --- 3. HIỂN THỊ HÀNG ĐỢI VÀ XEM BỆNH NHÂN TIẾP THEO ---
+list
+peek
+
+# --- 4. GỌI KHÁM LẦN LƯỢT CÁC BỆNH NHÂN ƯU TIÊN ---
+next
+next
+
+# --- 5. KIỂM THỬ LUẬT VẮNG MẶT (BÁO VẮNG 3 LẦN ĐỂ HẠ CẤP & CHÈN GIỮA) ---
+# Bệnh nhân đứng đầu hàng đợi hiện tại sẽ bị báo vắng 3 lần liên tiếp
+absent
+absent
+absent
+
+# Kiểm tra lại danh sách 4 hàng đợi sau khi hạ cấp và chèn giữa
+list
+
+# --- 6. KIỂM TRẢ DỊ ỨNG & KÊ ĐƠN THUỐC ---
+# Thử kiểm tra dị ứng trực tiếp
+check_allergy BN001 Penicillin
+
+# Thử kê đơn thuốc BỊ DỊ ỨNG (BN001 bị dị ứng Penicillin -> Báo lỗi & thất bại)
+prescribe BN001 24/07/2026 Viem_hong_cap Paracetamol,Penicillin
+
+# Kê đơn thuốc AN TOÀN cho BN001 (Không bị dị ứng -> Thành công & Tự lưu file CSV)
+prescribe BN001 24/07/2026 Viem_hong_cap Paracetamol,Vitamin_C
+
+# --- 7. TRA CỨU HỒ SƠ BỆNH NHÂN VÀ LỊCH SỬ KHÁM ---
+search BN001
+search BN004
+
+# --- 8. THAY ĐỔI ĐỘ ƯU TIÊN VÀ XÓA HỒ SƠ ---
+edit BN008 do
+delete BN010
+
+# Xem lại danh sách hàng đợi lần cuối
+list
